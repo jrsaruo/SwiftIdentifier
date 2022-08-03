@@ -64,3 +64,26 @@ extension Identifier: ExpressibleByIntegerLiteral where RawValue: ExpressibleByI
         self.init(rawValue: RawValue(integerLiteral: value))
     }
 }
+
+// MARK: - ExpressibleByStringLiteral
+
+extension Identifier: ExpressibleByUnicodeScalarLiteral where RawValue: ExpressibleByUnicodeScalarLiteral {
+    
+    public init(unicodeScalarLiteral value: RawValue.UnicodeScalarLiteralType) {
+        self.init(rawValue: RawValue(unicodeScalarLiteral: value))
+    }
+}
+
+extension Identifier: ExpressibleByExtendedGraphemeClusterLiteral where RawValue: ExpressibleByExtendedGraphemeClusterLiteral {
+    
+    public init(extendedGraphemeClusterLiteral value: RawValue.ExtendedGraphemeClusterLiteralType) {
+        self.init(rawValue: RawValue(extendedGraphemeClusterLiteral: value))
+    }
+}
+
+extension Identifier: ExpressibleByStringLiteral where RawValue: ExpressibleByStringLiteral {
+    
+    public init(stringLiteral value: RawValue.StringLiteralType) {
+        self.init(rawValue: RawValue(stringLiteral: value))
+    }
+}
