@@ -37,3 +37,21 @@ extension Identifier: Comparable where RawValue: Comparable {
         lhs.rawValue < rhs.rawValue
     }
 }
+
+// MARK: - Codable
+
+extension Identifier: Decodable where RawValue: Decodable {
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        rawValue = try container.decode(RawValue.self)
+    }
+}
+
+extension Identifier: Encodable where RawValue: Encodable {
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(rawValue)
+    }
+}
