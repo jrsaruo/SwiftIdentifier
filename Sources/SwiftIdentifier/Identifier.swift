@@ -55,3 +55,12 @@ extension Identifier: Encodable where RawValue: Encodable {
         try container.encode(rawValue)
     }
 }
+
+// MARK: - ExpressibleByIntegerLiteral
+
+extension Identifier: ExpressibleByIntegerLiteral where RawValue: ExpressibleByIntegerLiteral {
+    
+    public init(integerLiteral value: RawValue.IntegerLiteralType) {
+        self.init(rawValue: RawValue(integerLiteral: value))
+    }
+}
