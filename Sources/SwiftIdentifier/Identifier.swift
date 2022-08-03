@@ -14,3 +14,12 @@ public struct Identifier<Identified, RawValue>: RawRepresentable {
         self.rawValue = rawValue
     }
 }
+
+// MARK: - CustomStringConvertible -
+
+extension Identifier: CustomStringConvertible {
+    
+    public var description: String {
+        "\(rawValue)"
+    }
+}
