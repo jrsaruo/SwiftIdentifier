@@ -23,3 +23,17 @@ extension Identifier: CustomStringConvertible {
         "\(rawValue)"
     }
 }
+
+// MARK: - Conditional protocol conformances -
+
+extension Identifier: Equatable where RawValue: Equatable {}
+extension Identifier: Hashable where RawValue: Hashable {}
+
+// MARK: - Comparable
+
+extension Identifier: Comparable where RawValue: Comparable {
+    
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        lhs.rawValue < rhs.rawValue
+    }
+}
