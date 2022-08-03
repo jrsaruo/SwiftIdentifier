@@ -6,6 +6,23 @@
 //
 
 /// A structure to provide a different ID type for each type.
+///
+/// ```
+/// struct User {
+///     typealias ID = Identifier<Self, Int>
+///     let id: ID
+/// }
+/// struct Book {
+///     typealias ID = Identifier<Self, Int>
+///     let id: ID
+/// }
+/// let user = User(id: 10) // OK
+/// let book = Book(id: 10) // OK
+///
+/// func fetchProfile(with id: User.ID) -> Profile { ... }
+/// fetchProfile(with: user.id) // OK
+/// fetchProfile(with: book.id) // Compile error
+/// ```
 public struct Identifier<Identified, RawValue>: RawRepresentable {
     
     public let rawValue: RawValue
