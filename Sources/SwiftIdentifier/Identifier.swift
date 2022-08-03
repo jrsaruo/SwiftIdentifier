@@ -87,3 +87,12 @@ extension Identifier: ExpressibleByStringLiteral where RawValue: ExpressibleBySt
         self.init(rawValue: RawValue(stringLiteral: value))
     }
 }
+
+// MARK: - ExpressibleByStringInterpolation
+
+extension Identifier: ExpressibleByStringInterpolation where RawValue: ExpressibleByStringInterpolation {
+    
+    public init(stringInterpolation: RawValue.StringInterpolation) {
+        self.init(rawValue: .init(stringInterpolation: stringInterpolation))
+    }
+}
