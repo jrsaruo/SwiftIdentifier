@@ -4,7 +4,7 @@ A lightweight library that helps to define ID types.
 
 ## Requirements
 
-- Swift 5.6+
+- Swift 5.4+
 
 ## Features
 
