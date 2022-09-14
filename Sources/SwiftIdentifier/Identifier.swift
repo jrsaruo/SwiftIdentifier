@@ -45,6 +45,7 @@ extension Identifier: CustomStringConvertible {
 
 extension Identifier: Equatable where RawValue: Equatable {}
 extension Identifier: Hashable where RawValue: Hashable {}
+extension Identifier: Sendable where RawValue: Sendable {}
 
 // MARK: - Comparable
 
