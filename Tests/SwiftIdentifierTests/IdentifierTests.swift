@@ -46,6 +46,7 @@ final class IdentifierTests: XCTestCase {
         XCTAssertGreaterThan(sampleID, 1)
     }
     
+    @MainActor
     func testCodable() throws {
         let sampleJSONData = Data(#"{"id":10}"#.utf8) // NOTE: not {"id":{"rawValue":10}}
         

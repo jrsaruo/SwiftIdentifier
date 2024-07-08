@@ -60,7 +60,7 @@ extension Identifier: Comparable where RawValue: Comparable {
 
 extension Identifier: Decodable where RawValue: Decodable {
     
-    public init(from decoder: Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.singleValueContainer()
         rawValue = try container.decode(RawValue.self)
     }
@@ -68,7 +68,7 @@ extension Identifier: Decodable where RawValue: Decodable {
 
 extension Identifier: Encodable where RawValue: Encodable {
     
-    public func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: any Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(rawValue)
     }
