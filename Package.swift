@@ -23,6 +23,7 @@ let package = Package(
             dependencies: [],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency"),
+                .enableUpcomingFeature("ExistentialAny"),
             ]
         ),
         .testTarget(
@@ -30,6 +31,7 @@ let package = Package(
             dependencies: ["SwiftIdentifier"],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency"),
+                .enableUpcomingFeature("ExistentialAny"),
             ]
         ),
     ]
