@@ -4,7 +4,7 @@ A lightweight library that helps to define ID types.
 
 ## Requirements
 
-- Swift 5.4+
+- Swift 5.9+
 
 ## Features
 
@@ -82,7 +82,7 @@ userIDHandler(book.id) // Compile error!
 To use the `SwiftIdentifier` library in a SwiftPM project, add the following line to the dependencies in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/jrsaruo/SwiftIdentifier", from: "1.1.1"),
+.package(url: "https://github.com/jrsaruo/SwiftIdentifier", from: "1.1.2"),
 ```
 
 and add `SwiftIdentifier` as a dependency for your target:
