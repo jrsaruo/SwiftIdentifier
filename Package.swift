@@ -20,9 +20,17 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftIdentifier",
-            dependencies: []),
+            dependencies: [],
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency"),
+            ]
+        ),
         .testTarget(
             name: "SwiftIdentifierTests",
-            dependencies: ["SwiftIdentifier"]),
+            dependencies: ["SwiftIdentifier"],
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency"),
+            ]
+        ),
     ]
 )
